@@ -1,42 +1,101 @@
 body {
-  margin: 0;
-  padding: 0;
-
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 30px;
-  font-family: "Open Sans", "Arial", sans-serif;
-  color: #283645;
-
-  background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    color: $text-color;
+    background-color: #fff;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .visually-hidden:not(:focus):not(:active) {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-
-  border: 0;
-
-  clip: rect(0 0 0 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
 }
 
 .hidden-input {
-  position: absolute;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
+h1 {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 120%;
+    color: $heading-color;
+}
 
-  border: 0;
+h2 {
+    margin: 0 0 5px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: $heading-color;
+}
 
-  clip: rect(0 0 0 0);
+h3 {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: $heading-color;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: $tablet-width) {
+    body {
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    h1 {
+        margin: 0 0 40px;
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    h2 {
+        margin: 0 0 15px;
+        font-size: 66px;
+        line-height: 80px;
+    }
+
+    h3 {
+        margin: 0 0 15px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    p {
+        margin: 0 0 20px;
+    }
 }
