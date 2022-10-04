@@ -1,0 +1,42 @@
+.nav-btns {
+    @include list-reset;
+    @include dflex(nowrap, row, flex-start, center);
+}
+
+.nav-btns__item {
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
+}
+
+.nav-btns__btn {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.nav-btns__btn svg {
+    width: 100%;
+    height: auto;
+}
+
+.nav-btns__btn-hint {
+    display: none;
+}
+
+.nav-btns__btn-counter {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+    display: block;
+    min-width: 15px;
+    padding: 4px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 11px;
+    text-align: center;
+    border-radius: 6px;
+    background-color: $link-color-hover;
+}

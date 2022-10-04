@@ -1,0 +1,16 @@
+.logo {
+    width: 141px;
+    height: 64px;
+}
+
+.logo__img {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: $desktop-width) {
+    .logo {
+        width: 217px;
+        height: 101px;
+    }
+}

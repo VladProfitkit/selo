@@ -1,0 +1,15 @@
+.header-search__overlay {
+    display: none;
+
+    &--open {
+        @include dflex(nowrap, row, center, center);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255,255,255,.9);
+        overflow-y: auto;
+        z-index: 20;
+    }
+}
