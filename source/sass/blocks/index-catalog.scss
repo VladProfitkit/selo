@@ -1,0 +1,107 @@
+.index-catalog__sections {
+    @include dflex(nowrap, column, flex-start, stretch);
+    margin-bottom: -15px;
+}
+
+.index-catalog__section {
+    position: relative;
+    display: block;
+    height: 0;
+    margin-bottom: 15px;
+    padding-top: calc(100% / 345 * 210);
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+
+.index-catalog__section-bg {
+    @include object-fit;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 68.59%, rgba(0,0,0,.24) 100%);
+    z-index: 2;
+}
+
+.index-catalog__section-img {
+    @include object-fit;
+    @include transition(transform);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: scale(1);
+}
+
+.index-catalog__section-name {
+    @include transition(color);
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    &::after {
+        @include abs-center-x;
+        @include transition(background-color);
+        top: auto;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+    }
+}
+
+.index-catalog__section:hover .index-catalog__section-img,
+.index-catalog__section:focus .index-catalog__section-img {
+    transform: scale(1.05);
+}
+
+// .index-catalog__section:hover .index-catalog__section-name,
+// .index-catalog__section:focus .index-catalog__section-name {
+//     color: $link-color-hover;
+// }
+//
+// .index-catalog__section:active .index-catalog__section-name {
+//     color: $link-color-active;
+// }
+
+@media (min-width: $tablet-width) {
+    .index-catalog__sections {
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: calc(100% + 15px);
+        margin-bottom: -15px;
+    }
+
+    .index-catalog__section {
+        flex-basis: calc(50% - 15px);
+        margin-right: 15px;
+        margin-bottom: 15px;
+        padding-top: calc(50% / 590 * 360);
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .index-catalog__sections {
+        width: calc(100% + 25px);
+        margin-bottom: -25px;
+    }
+
+    .index-catalog__section {
+        flex-basis: calc(33.3333% - 25px);
+        margin-right: 25px;
+        margin-bottom: 25px;
+        padding-top: calc(33.3333% / 590 * 360);
+    }
+}

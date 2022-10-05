@@ -14,6 +14,18 @@ const closeMobileMenu = function() {
     body.removeClass('fixed');
 }
 
+const swapBannerBG = function() {
+    let bannerSection = $('.index-banner'),
+        mobileBG = bannerSection.data('bg-mobile'),
+        desktopBG = bannerSection.data('bg-desktop');
+
+    if ($(window).width() < 768) {
+        bannerSection.css('background-image', 'url('+mobileBG+')');
+    } else {
+        bannerSection.css('background-image', 'url('+desktopBG+')');
+    }
+}
+
 $(function() {
     //мобильное меню:
     let openMenuBtn = $('.header__mobile-btn--open'),
@@ -51,6 +63,9 @@ $(function() {
             closeHeaderSearch();
         }
     });
+
+    //Замена фона в баннере:
+    swapBannerBG();
 });
 
 $(window).on('resize', function() {
@@ -58,4 +73,7 @@ $(window).on('resize', function() {
     if ($(window).width() >= 1200 && $('.header__bottom').hasClass('header__bottom--open')) {
         closeMobileMenu();
     }
+
+    //Замена фона в баннере:
+    swapBannerBG();
 });

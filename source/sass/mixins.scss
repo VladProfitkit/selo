@@ -30,6 +30,14 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin abs-center-x {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @mixin abs-center-y {
     content: "";
     position: absolute;
@@ -46,4 +54,11 @@
 
 @mixin transition ($prop: all) {
     transition: $prop .2s linear;
+}
+
+@mixin object-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
