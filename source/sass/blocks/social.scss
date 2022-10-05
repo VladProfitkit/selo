@@ -1,0 +1,51 @@
+.social {
+    @include list-reset;
+    @include dflex(nowrap, row, center, center);
+    margin-bottom: 30px;
+}
+
+.social__item {
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
+}
+
+.social__link {
+    @include transition(background-color);
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $icon-bg-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px auto;
+
+    &:hover,
+    &:focus {
+        background-color: $accent-bg-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        background-color: $accent-bg-color-active;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .social {
+        margin-bottom: 20px;
+    }
+
+    .social__item {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    .social__link {
+        width: 24px;
+        height: 24px;
+        background-size: 15px auto;
+    }
+}

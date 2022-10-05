@@ -4,15 +4,28 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+    @include reset;
+    @include dflex(nowrap, column, flex-start, stretch);
+    height: 100%;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
     font-family: "Helvetica Neue", "Arial", sans-serif;
     color: $text-color;
     background-color: #fff;
+
+    &.fixed {
+        overflow: hidden;
+    }
+}
+
+main {
+    flex-grow: 1;
 }
 
 a {

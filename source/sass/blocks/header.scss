@@ -1,9 +1,3 @@
-.header {
-    &--fixed {
-        overflow: hidden;
-    }
-}
-
 .header__top {
     @include dflex(nowrap, row, space-between, center);
     padding: 10px 0;
@@ -65,9 +59,13 @@
 }
 
 @media (min-width: $desktop-width) {
+    .header__top {
+        padding-bottom: 0;
+    }
+
     .header__small-menus {
         &--desktop {
-            @include dflex(nowrap, row, space-between, center);
+            @include dflex(nowrap, row, flex-end, center);
         }
 
         &--mobile {
@@ -75,7 +73,17 @@
         }
     }
 
+    .header__mobile-btn {
+        display: none;
+    }
+
     .header__bottom {
         display: block;
+        padding-bottom: 17px;
+    }
+
+    .header__bottom-stuff {
+        @include dflex(nowrap, row-reverse, space-between, center);
+        margin-top: 15px;
     }
 }

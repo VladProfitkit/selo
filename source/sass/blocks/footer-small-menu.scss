@@ -1,0 +1,28 @@
+.footer-small-menu {
+    @include list-reset;
+    @include dflex(nowrap, column, flex-start, center);
+}
+
+.footer-small-menu__item {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-small-menu__link {
+    @include transition(color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: $accent-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}

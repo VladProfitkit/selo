@@ -1,6 +1,12 @@
 .logo {
-    width: 141px;
-    height: 64px;
+    &--header {
+        width: 141px;
+        height: 64px;
+    }
+
+    &--footer {
+        display: none;
+    }
 }
 
 .logo__img {
@@ -8,9 +14,22 @@
     height: auto;
 }
 
+@media (min-width: $tablet-width) {
+    .logo {
+        &--header {
+            width: 217px;
+            height: 101px;
+        }
+    }
+}
+
 @media (min-width: $desktop-width) {
     .logo {
-        width: 217px;
-        height: 101px;
+        &--footer {
+            display: block;
+            width: 217px;
+            height: 101px;
+            margin: 0 auto 20px;
+        }
     }
 }

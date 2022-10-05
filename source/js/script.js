@@ -4,14 +4,14 @@ const openMobileMenu = function() {
     let mobileMenu = $('.header__bottom');
 
     mobileMenu.addClass('header__bottom--open');
-    body.addClass('header--fixed');
+    body.addClass('fixed');
 }
 
 const closeMobileMenu = function() {
     let mobileMenu = $('.header__bottom');
 
     mobileMenu.removeClass('header__bottom--open');
-    body.removeClass('header--fixed');
+    body.removeClass('fixed');
 }
 
 $(function() {
@@ -34,12 +34,12 @@ $(function() {
 
     const openHeaderSearch = function() {
         searchScreen.addClass('header-search__overlay--open');
-        body.addClass('header--fixed');
+        body.addClass('fixed');
     }
 
     const closeHeaderSearch = function() {
         searchScreen.removeClass('header-search__overlay--open');
-        body.removeClass('header--fixed');
+        body.removeClass('fixed');
     }
 
     openSearchBtn.on('click', function() {
@@ -51,4 +51,11 @@ $(function() {
             closeHeaderSearch();
         }
     });
-})
+});
+
+$(window).on('resize', function() {
+    //закрытие моб. меню при переходе на широкий экран:
+    if ($(window).width() >= 1200 && $('.header__bottom').hasClass('header__bottom--open')) {
+        closeMobileMenu();
+    }
+});
