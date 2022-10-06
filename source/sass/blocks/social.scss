@@ -23,12 +23,12 @@
 
     &:hover,
     &:focus {
-        background-color: $accent-bg-color-hover;
+        background-color: $link-color-hover;
         outline: none;
     }
 
     &:active {
-        background-color: $accent-bg-color-active;
+        background-color: $link-color-active;
     }
 }
 

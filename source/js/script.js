@@ -125,7 +125,7 @@ $(function() {
                     }
                 },
                 {
-                    breakpoint: 767,
+                    breakpoint: 991,
                     settings: {
                         slidesToShow: 2,
                         infinite: true,
@@ -133,7 +133,7 @@ $(function() {
                     }
                 },
                 {
-                    breakpoint: 575,
+                    breakpoint: 699,
                     settings: {
                         slidesToShow: 1,
                         infinite: true,
