@@ -1,11 +1,60 @@
 .section {
     margin-top: 40px;
     margin-bottom: 40px;
+
+    &--slider {
+        overflow: hidden; 
+    }
 }
 
 .section__heading {
     margin-bottom: 20px;
     text-align: center;
+}
+
+.section__all-link-container {
+    @include dflex(now, row, center, flex-start);
+    padding-bottom: 6px;
+}
+
+.section__all-link {
+    @include transition(color);
+    position: relative;
+    display: block;
+    margin: 30px auto 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: $heading-color;
+
+    &::after {
+        @include abs-center-x;
+        @include transition(background-color);
+        top: auto;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background-color: $heading-color;
+    }
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+
+        &::after {
+            background-color: $link-color-hover;
+        }
+    }
+
+    &:active {
+        color: $link-color-active;
+
+        &::after {
+            background-color: $link-color-active;
+        }
+    }
 }
 
 @media (min-width: $tablet-width) {
@@ -16,6 +65,10 @@
 
     .section__heading {
         margin-bottom: 30px;
+    }
+
+    .section__all-link {
+        margin-top: 40px;
     }
 }
 

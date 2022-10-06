@@ -1,0 +1,19 @@
+.hits__items .slick-slide {
+    width: calc(100vw - 54px) !important;
+    margin-left: 10px;
+    text-align: center;
+}
+
+@media (min-width: $desktop-width) {
+    .hits__items-wrapper {
+        overflow: hidden;
+    }
+
+    .hits__items .slick-slide {
+        margin-left: 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

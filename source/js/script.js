@@ -66,6 +66,91 @@ $(function() {
 
     //Замена фона в баннере:
     swapBannerBG();
+
+    //слайдер коллекций на главной:
+    let collectionSlider = $('.index-catalog--slider .slider__slider:not(.slick-initialized)');
+
+    if (collectionSlider.length) {
+        collectionSlider.slick({
+            infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: collectionSlider.closest('.index-catalog--slider').find('.slider__arrow--prev'),
+            nextArrow: collectionSlider.closest('.index-catalog--slider').find('.slider__arrow--next'),
+            responsive: [
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        slidesToShow: 2,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        infinite: true,
+                    }
+                },
+            ]
+        });
+    }
+
+    //слайдер лидеров продаж:
+    let hitsSlider = $('.hits .slider__slider:not(.slick-initialized)');
+
+    if (hitsSlider.length) {
+        hitsSlider.slick({
+            infinite: false,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            centerMode: false,
+            prevArrow: hitsSlider.closest('.hits').find('.slider__arrow--prev'),
+            nextArrow: hitsSlider.closest('.hits').find('.slider__arrow--next'),
+            responsive: [
+                {
+                    breakpoint: 1599,
+                    settings: {
+                        slidesToShow: 4,
+                        infinite: false,
+                        centerMode: false,
+                    }
+                },
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        slidesToShow: 3,
+                        infinite: true,
+                        centerMode: true,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        infinite: true,
+                        centerMode: true,
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1,
+                        infinite: true,
+                        centerMode: true,
+                    }
+                },
+            ]
+        });
+    }
+
+    //"добавление" в избранное (УДАЛИТЬ ПОСЛЕ ПЕРЕНОСА!!!):
+    let productFavBtns = $('.product__fav');
+
+    productFavBtns.on('click', function() {
+        $(this).toggleClass('product__fav--active');
+        $(this).blur();
+    });
 });
 
 $(window).on('resize', function() {

@@ -1,0 +1,212 @@
+.product {
+    @include dflex(nowrap, column, flex-start, center);
+    position: relative;
+    padding: 5px 5px 25px;
+    border: 1px solid $product-default-border-color;
+    border-radius: 10px;
+}
+
+
+.product__fav {
+    position: absolute;
+    top: 20px;
+    right: 17px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+
+    & path {
+        @include transition();
+        fill: transparent;
+        stroke: $footer-menu-divider-color;
+    }
+
+    &:not(.product__fav--active):hover,
+    &:not(.product__fav--active):focus {
+        outline: none;
+
+        & path {
+            fill: transparent;
+            stroke: $link-color-hover;
+        }
+    }
+
+    &:not(.product__fav--active):active {
+        & path {
+            fill: transparent;
+            stroke: $link-color-active;
+        }
+    }
+
+    &--active {
+        & path {
+            fill: $link-color-hover;
+            stroke: $link-color-hover;
+        }
+    }
+}
+
+.product__img-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    max-height: 310px;
+    margin: 0 auto 5px;
+    overflow: hidden;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.product__img {
+    @include object-fit;
+    @include transition(transform);
+    transform: scale(1);
+}
+
+.product__img-link:hover .product__img,
+.product__img-link:focus .product__img {
+    transform: scale(1.05);
+}
+
+.product__name {
+    @include transition(color);
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: $heading-color;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
+.product__desc {
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: $accent-color-ligher;
+}
+
+.product__price {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    color: $heading-color;
+}
+
+.product__buy {
+    @include dflex(nowrap, row, flex-start, flex-end);
+    position: relative;
+    margin-top: auto;
+
+    &::after {
+        @include abs-center-x;
+        @include transition(background-color);
+        top: auto;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: $link-color-hover;
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+
+        &::after {
+            background-color: $link-color-active;
+        }
+    }
+}
+
+.product__buy-text {
+    @include transition(color);
+    display: block;
+    margin: 0 10px 0 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: $link-color-hover;
+}
+
+.product__buy-icon {
+    width: 23px;
+    height: 23px;
+
+    & path {
+        @include transition(fill);
+        fill: $link-color-hover;
+    }
+}
+
+.product__buy:hover .product__buy-text,
+.product__buy:focus .product__buy-text {
+    color: $link-color-active;
+}
+
+.product__buy:hover path,
+.product__buy:focus path {
+    fill: $link-color-active;
+}
+
+
+@media (min-width: $desktop-width) {
+    .product {
+        @include transition(border-color);
+        padding: 5px 5px 20px;
+        border-color: transparent;
+
+        &:hover {
+            border-color: $product-hover-border-color;
+        }
+    }
+
+    .product:focus-within {
+        border-color: $product-hover-border-color;
+    }
+
+    .product__img-link {
+        max-width: 338px;
+        max-height: 338px;
+        margin-bottom: 10px;
+    }
+
+    .product__name {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .product__desc {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .product__price {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .product__buy-text {
+        font-size: 22px;
+        line-height: 25px;
+    }
+}

@@ -38,6 +38,14 @@ img {
     height: auto;
 }
 
+.slick-initialized .slick-list {
+    width: 100%;
+}
+
+.slick-initialized .slick-track {
+    display: flex;
+}
+
 .visually-hidden:not(:focus):not(:active) {
     position: absolute;
     width: 1px;
