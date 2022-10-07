@@ -151,6 +151,45 @@ $(function() {
         $(this).toggleClass('product__fav--active');
         $(this).blur();
     });
+
+    //открытие модалок по ajax:
+    body.on('click', '[data-ajax=""]', function(e) {
+        e.preventDefault();
+
+        let ajaxCallBtn = $(this),
+            link = ajaxCallBtn.data('link');
+
+        if (link) {
+            closeMobileMenu();
+            closeHeaderSearch();
+            closeModals();
+
+            body.addClass('fixed');
+
+            $.ajax({
+                type: 'GET',
+                url: link,
+                dataType: 'html',
+                success: function(data) {
+                    body.append($(data));
+                },
+                complete: function() {
+                    // $('.tabs-links__link').removeClass('loading');
+                },
+                error: function() {
+                    console.log('error: request failed');
+                }
+            });
+        } else {
+            console.log('error: no link');
+        }
+    });
+
+    //закрытие модалок:
+    const closeModals = function() {
+        body.find('.default-modal').remove();
+        body.removeClass('fixed');
+    }
 });
 
 $(window).on('resize', function() {

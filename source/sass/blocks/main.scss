@@ -1,0 +1,39 @@
+.main {
+    padding: 20px 0 40px;
+
+    &--index {
+        padding: 0;
+    }
+
+    &--404 {
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .main {
+        padding: 30px 0 60px;
+
+        &--index {
+            padding: 0;
+        }
+
+        &--404 {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .main {
+        padding: 40px 0 80px;
+
+        &--index {
+            padding: 0;
+        }
+
+        &--404 {
+            padding-bottom: 0;
+        }
+    }
+}
