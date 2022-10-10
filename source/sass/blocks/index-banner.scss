@@ -1,10 +1,22 @@
 .index-banner {
     @include dflex(nowrap, column, center, center);
+    position: relative;
     min-height: 350px;
     padding: 40px 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.index-banner picture {
+    @include object-fit;
+    @include center;
+    position: absolute;
+    z-index: -1;
+}
+
+.index-banner__img {
+    @include object-fit;
 }
 
 .index-banner .site-container {

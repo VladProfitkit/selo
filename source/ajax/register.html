@@ -12,7 +12,7 @@
             </svg>
         </button>
 
-        <h3 class="default-modal__heading">Вход в личный кабинет</h3>
+        <h3 class="default-modal__heading">Регистрация</h3>
 
         <form class="default-modal__form form form--login" method="post" action="#">
             <div class="form__inputs">
@@ -23,20 +23,26 @@
 
                 <label class="form__input-label">
                     <p class="form__input-label-text">Пароль*</p>
-                    <input class="form__input" type="password" name="PASSWORD" placeholder="Введите ваш пароль">
+                    <input class="form__input" type="password" name="PASSWORD" placeholder="Придумайте пароль">
+                </label>
+
+                <label class="form__input-label">
+                    <p class="form__input-label-text">Повторите пароль*</p>
+                    <input class="form__input" type="password" name="PASSWORD_CONFIRM" placeholder="Введите пароль еще раз">
                 </label>
             </div>
 
-            <a class="form__forgot-link" href="#">Забыли пароль?</a>
+            <p class="form__agreement">
+                Нажимая кнопку «Зарегистрироваться», вы соглашаетесь с <a class="form__agreement-link" href="#">Условиями&nbsp;сайта</a> и <a class="form__agreement-link" href="#">Политикой&nbsp;конфиденциальности</a>
+            </p>
 
             <div class="form__btns">
-                <button class="form__btn btn btn--modal" type="submit">Войти</button>
-                <a class="form__btn btn btn--modal btn--secondary" href="#">Продолжить без регистрации</a>
+                <button class="form__btn btn btn--modal" type="submit">Зарегистрироваться</button>
             </div>
 
             <p class="form__after-info">
-                <span class="form__after-info-text">Еще нет личного кабинета?</span>
-                <a class="form__after-info-link" href="javascript:;" data-ajax="" data-link="/ajax/register.html">Зарегистрируйтесь</a>
+                <span class="form__after-info-text">Уже зарегистрированы?</span>
+                <a class="form__after-info-link" href="javascript:;" data-ajax="" data-link="/ajax/personal.html">Авторизуйтесь</a>
             </p>
         </form>
     </div>

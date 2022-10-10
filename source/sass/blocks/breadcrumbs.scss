@@ -1,0 +1,44 @@
+.breadcrumbs {
+    @include list-reset;
+    @include dflex(nowrap, row, flex-start, center);
+}
+
+.breadcrumbs__item {
+    &:not(:last-child) {
+        position: relative;
+        margin-right: 10px;
+        padding-right: 17px;
+
+        &::after {
+            content: "/";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.breadcrumbs__link {
+    @include transition(color);
+    font-size: 16px;
+    line-height: 28px;
+    color: $heading-color;
+
+    &:not([href]),
+    &:not([href]):hover,
+    &:not([href]):focus,
+    &:not([href]):active {
+        color: $neutral-color;
+    }
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}

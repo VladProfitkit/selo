@@ -1,0 +1,90 @@
+.btn {
+    @include dflex(nowrap, row, center, center);
+    @include transition();
+    text-align: center;
+    height: 70px;
+    padding: 0;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: $accent-bg-color-active;
+    border: 1px solid $accent-bg-color-active;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+        background-color: $accent-bg-color-hover;
+        border-color: $accent-bg-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        background-color: #fff;
+    }
+
+    &--modal {
+        max-width: 100%;
+    }
+
+    &--secondary {
+        color: $accent-color;
+        background-color: #fff;
+        border-color: $accent-bg-color-hover;
+
+        &:active {
+            color: #fff;
+            background-color: $accent-bg-color-active;
+            border: 1px solid $accent-bg-color-active;
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .btn {
+        &--modal {
+            position: relative;
+
+            &::before,
+            &::after {
+                @include transition(background-color);
+                @include abs-center-y;
+                width: 20px;
+                height: 1px;
+                background-color: #fff;
+            }
+
+            &::before {
+                left: 35px;
+            }
+
+            &::after {
+                right: 35px;
+                left: auto;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                &::before,
+                &::after {
+                    background-color: $accent-color
+                }
+            }
+        }
+    }
+
+    .btn--modal.btn--secondary {
+        &::before,
+        &::after {
+            background-color: $accent-color;
+        }
+
+        &:active {
+            &::before,
+            &::after {
+                background-color: #fff;
+            }
+        }
+    }
+}

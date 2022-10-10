@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Главная</title>
+    <title>Оформление заказа</title>
 </head>
 <body>
     <header class="header">
@@ -235,258 +235,30 @@
         </div>
     </header>
 
-    <main class="main main--index">
-        <section class="index-banner">
-            <picture>
-                <source media="(min-width: 768px)" srcset="/img/img-index-banner-desktop.jpg">
-                <img class="index-banner__img" src="/img/img-index-banner-mobile.jpg" alt="Баннер">
-            </picture>
+    <main class="main">
+        <div class="main__prepage">
             <div class="site-container">
-                <h1 class="index-banner__heading">Интернет-магазин</h1>
-                <a class="index-banner__link" href="#">Подробнее</a>
+                <ul class="main__prepage-breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a class="breadcrumbs__link" href="#" itemprop="item">
+                            <span itemprop="name">Главная</span>
+                        </a>
+                        <meta itemprop="position" content="1">
+                    </li>
+
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a class="breadcrumbs__link" itemprop="item">
+                            <span itemprop="name">Оформление заказа</span>
+                        </a>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ul>
+
+                <h1 class="main__page-heading">Оформление заказа</h1>
             </div>
-        </section>
+        </div>
 
-        <section class="section index-catalog">
-            <div class="site-container">
-                <h2 class="section__heading">Каталог</h2>
 
-                <div class="index-catalog__sections">
-                     <a class="index-catalog__section" href="#">
-                         <div class="index-catalog__section-bg"></div>
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-1.jpg" alt="Книги">
-                         <h3 class="index-catalog__section-name">Книги</h3>
-                     </a>
-
-                     <a class="index-catalog__section" href="#">
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-2.jpg" alt="Сувениры">
-                         <h3 class="index-catalog__section-name">Сувениры</h3>
-                     </a>
-
-                     <a class="index-catalog__section" href="#">
-                         <div class="index-catalog__section-bg"></div>
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-3.jpg" alt="Товары для дома">
-                         <h3 class="index-catalog__section-name">Товары для дома</h3>
-                     </a>
-
-                     <a class="index-catalog__section" href="#">
-                         <div class="index-catalog__section-bg"></div>
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-4.jpg" alt="Канцелярские товары">
-                         <h3 class="index-catalog__section-name">Канцелярские товары</h3>
-                     </a>
-
-                     <a class="index-catalog__section" href="#">
-                         <div class="index-catalog__section-bg"></div>
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-5.jpg" alt="Одежда и аксессуары">
-                         <h3 class="index-catalog__section-name">Одежда и аксессуары</h3>
-                     </a>
-
-                     <a class="index-catalog__section" href="#">
-                         <div class="index-catalog__section-bg"></div>
-                         <img class="index-catalog__section-img" src="/img/img-index-catalog-6.jpg" alt="Детям">
-                         <h3 class="index-catalog__section-name">Детям</h3>
-                     </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--slider index-catalog index-catalog--slider">
-            <div class="site-container">
-                <h2 class="section__heading">Каталог</h2>
-
-                <div class="index-catalog__sections-wrapper slider slider--index-catalog">
-                    <div class="slider__arrows">
-                        <button class="slider__arrow slider__arrow--prev">
-                            <svg width="14" height="28" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7857 1.48917C13.9809 1.29391 13.9809 0.977327 13.7857 0.782066C13.5904 0.586803 13.2738 0.586803 13.0786 0.782066L0.215807 13.6448C0.215287 13.6453 0.214771 13.6459 0.214254 13.6464C0.0189916 13.8416 0.0189916 14.1582 0.214254 14.3535C0.214449 14.3537 0.214646 14.3539 0.214841 14.3541L13.0786 27.2178C13.2738 27.4131 13.5904 27.4131 13.7857 27.2178C13.9809 27.0225 13.9809 26.706 13.7857 26.5107L1.27491 13.9999L13.7857 1.48917Z" fill="#06111D"/>
-                            </svg>
-                        </button>
-                        <button class="slider__arrow slider__arrow--next">
-                            <svg width="14" height="28" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.214288 1.48917C0.0190262 1.29391 0.0190262 0.977327 0.214288 0.782066C0.40955 0.586803 0.726133 0.586803 0.921395 0.782066L13.7842 13.6448C13.7847 13.6453 13.7852 13.6459 13.7857 13.6464C13.981 13.8416 13.981 14.1582 13.7857 14.3535C13.7855 14.3537 13.7853 14.3539 13.7851 14.3541L0.921397 27.2178C0.726135 27.4131 0.409552 27.4131 0.21429 27.2178C0.019028 27.0225 0.019028 26.706 0.21429 26.5107L12.7251 13.9999L0.214288 1.48917Z" fill="#06111D"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="index-catalog__sections slider__slider">
-                         <a class="index-catalog__section" href="#">
-                             <div class="index-catalog__section-bg index-catalog__section-bg--darker"></div>
-                             <img class="index-catalog__section-img" src="/img/img-index-catalog-slider-1.jpg" alt="Солнечный камень">
-                             <h3 class="index-catalog__section-name">Солнечный камень</h3>
-                         </a>
-
-                         <a class="index-catalog__section" href="#">
-                             <div class="index-catalog__section-bg index-catalog__section-bg--darker"></div>
-                             <img class="index-catalog__section-img" src="/img/img-index-catalog-slider-2.jpg" alt="Золото на голубом">
-                             <h3 class="index-catalog__section-name">Золото на голубом</h3>
-                         </a>
-
-                         <a class="index-catalog__section" href="#">
-                             <div class="index-catalog__section-bg index-catalog__section-bg--darker"></div>
-                             <img class="index-catalog__section-img" src="/img/img-index-catalog-slider-3.jpg" alt="Французский шелк">
-                             <h3 class="index-catalog__section-name">Французский шелк</h3>
-                         </a>
-
-                         <a class="index-catalog__section" href="#">
-                             <div class="index-catalog__section-bg index-catalog__section-bg--darker"></div>
-                             <img class="index-catalog__section-img" src="/img/img-index-catalog-slider-4.jpg" alt="Китайский каприз">
-                             <h3 class="index-catalog__section-name">Китайский каприз</h3>
-                         </a>
-                    </div>
-                </div>
-
-                <div class="section__all-link-container">
-                    <a class="section__all-link" href="#">Смотреть все коллекции</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--slider hits">
-            <div class="site-container">
-                <h2 class="section__heading">Лидеры продаж</h2>
-
-                <div class="hits__items-wrapper slider slider--index-hits">
-                    <div class="slider__arrows">
-                        <button class="slider__arrow slider__arrow--prev">
-                            <svg width="14" height="28" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7857 1.48917C13.9809 1.29391 13.9809 0.977327 13.7857 0.782066C13.5904 0.586803 13.2738 0.586803 13.0786 0.782066L0.215807 13.6448C0.215287 13.6453 0.214771 13.6459 0.214254 13.6464C0.0189916 13.8416 0.0189916 14.1582 0.214254 14.3535C0.214449 14.3537 0.214646 14.3539 0.214841 14.3541L13.0786 27.2178C13.2738 27.4131 13.5904 27.4131 13.7857 27.2178C13.9809 27.0225 13.9809 26.706 13.7857 26.5107L1.27491 13.9999L13.7857 1.48917Z" fill="#06111D"/>
-                            </svg>
-                        </button>
-                        <button class="slider__arrow slider__arrow--next">
-                            <svg width="14" height="28" viewBox="0 0 14 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.214288 1.48917C0.0190262 1.29391 0.0190262 0.977327 0.214288 0.782066C0.40955 0.586803 0.726133 0.586803 0.921395 0.782066L13.7842 13.6448C13.7847 13.6453 13.7852 13.6459 13.7857 13.6464C13.981 13.8416 13.981 14.1582 13.7857 14.3535C13.7855 14.3537 13.7853 14.3539 13.7851 14.3541L0.921397 27.2178C0.726135 27.4131 0.409552 27.4131 0.21429 27.2178C0.019028 27.0225 0.019028 26.706 0.21429 26.5107L12.7251 13.9999L0.214288 1.48917Z" fill="#06111D"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="hits__items slider__slider">
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-1.jpg" alt="Сумка детская">
-                            </a>
-                            <a class="product__name" href="#">Сумка детская</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-2.jpg" alt="Платок">
-                            </a>
-                            <a class="product__name" href="#">Платок</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-3.jpg" alt="Подушка декоративная">
-                            </a>
-                            <a class="product__name" href="#">Подушка декоративная</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-4.jpg" alt="Сумка-шоппер">
-                            </a>
-                            <a class="product__name" href="#">Сумка-шоппер</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-5.jpg" alt="Футболка">
-                            </a>
-                            <a class="product__name" href="#">Футболка</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="hits__item product">
-                            <button class="product__fav">
-                                <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.295 1C16.1603 1 14.3227 3.68085 13.4039 5.46809C12.4851 4.2766 11.5661 1 6.51278 1C1.45948 1 -5.43169 11.7234 13.4039 22C33.6177 10.383 24.4296 1 20.295 1Z" stroke="#B4B8BB" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <a class="product__img-link" href="#">
-                                <img class="product__img" src="/img/img-hit-item-3.jpg" alt="Подушка декоративная">
-                            </a>
-                            <a class="product__name" href="#">Подушка декоративная</a>
-                            <span class="product__desc">Золото на голубом</span>
-                            <span class="product__price">1250&nbsp;₽</span>
-                            <a class="product__buy" href="javascript:;">
-                                <span class="product__buy-text">В корзину</span>
-                                <svg class="product__buy-icon" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5901 4.23725C21.3323 3.92782 21.0095 3.67895 20.6446 3.50833C20.2798 3.33771 19.8818 3.24951 19.4791 3.25H4.6584L4.6199 2.92825C4.54111 2.25947 4.21967 1.64284 3.71651 1.19527C3.21336 0.747705 2.56347 0.500313 1.89006 0.5H1.68656C1.44345 0.5 1.21029 0.596577 1.03838 0.768485C0.866475 0.940394 0.769897 1.17355 0.769897 1.41667C0.769897 1.65978 0.866475 1.89294 1.03838 2.06485C1.21029 2.23676 1.44345 2.33333 1.68656 2.33333H1.89006C2.11459 2.33336 2.33129 2.41579 2.49907 2.56499C2.66685 2.71419 2.77404 2.91977 2.80031 3.14275L4.06165 13.8678C4.1926 14.9831 4.7285 16.0116 5.56765 16.758C6.40679 17.5044 7.49076 17.9167 8.61381 17.9167H18.1866C18.4297 17.9167 18.6628 17.8201 18.8347 17.6482C19.0067 17.4763 19.1032 17.2431 19.1032 17C19.1032 16.7569 19.0067 16.5237 18.8347 16.3518C18.6628 16.1799 18.4297 16.0833 18.1866 16.0833H8.61381C8.04645 16.0817 7.49346 15.9047 7.03067 15.5765C6.56788 15.2483 6.21793 14.7849 6.02881 14.25H16.9555C18.0301 14.2501 19.0705 13.8725 19.8951 13.1834C20.7196 12.4943 21.2758 11.5373 21.4664 10.4798L22.186 6.48858C22.2578 6.09259 22.2417 5.68565 22.1387 5.29658C22.0357 4.90752 21.8485 4.54587 21.5901 4.23725ZM20.3866 6.16317L19.6661 10.1543C19.5516 10.7896 19.2173 11.3643 18.7218 11.7779C18.2262 12.1915 17.601 12.4176 16.9555 12.4167H5.73731L4.87473 5.08333H19.4791C19.6137 5.08253 19.7469 5.1114 19.8691 5.1679C19.9914 5.2244 20.0997 5.30713 20.1863 5.41022C20.2729 5.51331 20.3358 5.63422 20.3704 5.76436C20.405 5.8945 20.4105 6.03066 20.3866 6.16317ZM7.18673 22.5C8.19925 22.5 9.02006 21.6792 9.02006 20.6666C9.02006 19.6541 8.19925 18.8333 7.18673 18.8333C6.1742 18.8333 5.35339 19.6541 5.35339 20.6666C5.35339 21.6792 6.1742 22.5 7.18673 22.5ZM18.1866 20.6666C18.1866 21.6792 17.3658 22.5 16.3532 22.5C15.3407 22.5 14.5199 21.6792 14.5199 20.6666C14.5199 19.6541 15.3407 18.8333 16.3532 18.8333C17.3658 18.8333 18.1866 19.6541 18.1866 20.6666Z" fill="#E48C3A"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section__all-link-container">
-                    <a class="section__all-link" href="#">Перейти в каталог</a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
@@ -627,6 +399,7 @@
         </div>
     </footer>
 
+    <script defer="" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="/js/slick.min.js"></script>
     <script src="/js/script.js"></script>

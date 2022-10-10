@@ -1,0 +1,156 @@
+.form {
+    @include dflex(nowrap, column, flex-start, center);
+}
+
+.form__inputs {
+    @include dflex(nowrap, column, flex-start, stretch);
+    width: 100%;
+}
+
+.form__input-label {
+    @include dflex(nowrap, column, flex-start, stretch);
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: 28px;
+    }
+}
+
+.form__input-label-text {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px;
+}
+
+.form__input {
+    @include transition(border-color);
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0 0 13px;
+    color: $accent-color;
+    font-size: 14px;
+    line-height: 22px;
+    border: none;
+    border-bottom: 1px solid $accent-bg-color-hover;
+
+    &::placeholder {
+        color: $accent-bg-color-hover;
+        opacity: 1;
+    }
+
+    &:focus {
+        border-color: $accent-color-light;
+        outline: none;
+    }
+}
+
+.form__forgot-link {
+    @include transition(color);
+    margin: 18px 0;
+    color: $accent-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
+.form__btns {
+    @include dflex(nowrap, column, flex-start, stretch);
+    width: 100%;
+}
+
+.form__btn {
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.form__after-info {
+    @include dflex(nowrap, column, flex-start, center);
+    margin-top: 20px;
+}
+
+.form__after-info-text {
+    margin-bottom: 10px;
+    color: $accent-color-lighter;
+}
+
+.form__after-info-link {
+    @include transition(color);
+    color: $accent-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
+.form__agreement {
+    margin: 18px 0 14px;
+    text-align: center;
+    color: $accent-color-lighter;
+}
+
+.form__agreement-link {
+    @include transition(color);
+    @include transition(color);
+    color: $accent-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .form {
+        flex-grow: 1;
+    }
+
+    .form__input {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .form__forgot-link {
+        margin: 10px 0 30px;
+    }
+
+    .form__btn {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .form__after-info {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    .form__after-info-text {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .form__agreement {
+        margin: 30px 0 15px;
+    }
+}

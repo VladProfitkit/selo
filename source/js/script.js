@@ -14,17 +14,17 @@ const closeMobileMenu = function() {
     body.removeClass('fixed');
 }
 
-const swapBannerBG = function() {
-    let bannerSection = $('.index-banner'),
-        mobileBG = bannerSection.data('bg-mobile'),
-        desktopBG = bannerSection.data('bg-desktop');
-
-    if ($(window).width() < 768) {
-        bannerSection.css('background-image', 'url('+mobileBG+')');
-    } else {
-        bannerSection.css('background-image', 'url('+desktopBG+')');
-    }
-}
+// const swapBannerBG = function() {
+//     let bannerSection = $('.index-banner'),
+//         mobileBG = bannerSection.data('bg-mobile'),
+//         desktopBG = bannerSection.data('bg-desktop');
+//
+//     if ($(window).width() < 768) {
+//         bannerSection.css('background-image', 'url('+mobileBG+')');
+//     } else {
+//         bannerSection.css('background-image', 'url('+desktopBG+')');
+//     }
+// }
 
 $(function() {
     //мобильное меню:
@@ -65,7 +65,7 @@ $(function() {
     });
 
     //Замена фона в баннере:
-    swapBannerBG();
+    // swapBannerBG();
 
     //слайдер коллекций на главной:
     let collectionSlider = $('.index-catalog--slider .slider__slider:not(.slick-initialized)');
@@ -190,6 +190,60 @@ $(function() {
         body.find('.default-modal').remove();
         body.removeClass('fixed');
     }
+
+    body.on('click', '.default-modal__close-btn', function() {
+        closeModals();
+    });
+
+    body.on('click', '.default-modal', function(e) {
+        if (!$('.default-modal__body').is(e.target) && $('.default-modal__body').has(e.target).length === 0) {
+            closeModals();
+        }
+    });
+
+    $(document).on('keyup', function(e) {
+        if (e.keyCode == 27 && body.find('.default-modal').length) {
+            closeModals();
+        }
+    });
+
+    //карта в контактах:
+    var contactsMap = $('#contacts-map');
+    if (contactsMap.length) {
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('contacts-map', {
+                center: [59.717327, 30.394686],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
+
+            myPlacemarkWithContent = new ymaps.Placemark([59.717327, 30.394686], {
+                hintContent: 'hintContent',
+                balloonContent: 'balloonContent',
+            }, {
+                iconLayout: 'default#imageWithContent',
+                iconImageHref: 'img/icon-map-pin.svg',
+                iconImageSize: [54, 54],
+                iconImageOffset: [-27, -27],
+                iconContentOffset: [0, 0],
+                iconContentLayout: MyIconContentLayout
+            });
+
+            myMap.geoObjects.add(myPlacemarkWithContent);
+            myMap.controls.remove('rulerControl');
+            myMap.controls.remove('searchControl');
+            myMap.controls.remove('trafficControl');
+            myMap.controls.remove('typeSelector');
+            myMap.controls.remove('zoomControl');
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('routeEditor');
+        });
+    }
 });
 
 $(window).on('resize', function() {
@@ -199,5 +253,5 @@ $(window).on('resize', function() {
     }
 
     //Замена фона в баннере:
-    swapBannerBG();
+    // swapBannerBG();
 });

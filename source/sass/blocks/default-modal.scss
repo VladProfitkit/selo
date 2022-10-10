@@ -10,19 +10,86 @@
 }
 
 .default-modal__body {
+    position: relative;
     width: 100%;
     height: 100%;
     max-height: 100%;
+    padding: 75px 15px 50px;
     background-color: #fff;
     overflow-y: auto;
 }
 
+.default-modal__close-btn {
+    @include dflex(nowrap, row, center, center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.default-modal__close-btn-icon {
+    width: 20px;
+    height: 20px;
+
+    &--desktop {
+        display: none;
+    }
+
+    & rect {
+        @include transition(fill);
+        fill: $accent-bg-color-hover;
+    }
+}
+
+.default-modal__close-btn:hover rect,
+.default-modal__close-btn:focus rect {
+    fill: $accent-color-light;
+}
+
+.default-modal__close-btn:active rect {
+    fill: $accent-color-lighter;
+}
+
+.default-modal__heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 @media (min-width: $tablet-width) {
     .default-modal__body {
+        @include dflex(nowrap, column, flex-start, stretch);
         width: 570px;
         max-width: 570px;
         height: 700px;
         max-height: 700px;
+        padding: 60px 85px 40px;
         border-radius: 10px;
+    }
+
+    .default-modal__close-btn {
+        right: 0;
+        left: auto;
+    }
+
+    .default-modal__close-btn-icon {
+        width: 20px;
+        height: 20px;
+
+        &--desktop {
+            display: block;
+        }
+
+        &--mobile {
+            display: none;
+        }
     }
 }

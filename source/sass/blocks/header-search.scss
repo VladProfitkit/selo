@@ -80,7 +80,7 @@
     box-shadow: 0 14px 32px rgba(0,0,0,.1);
 
     &::placeholder {
-        color: $accent-color-ligher;
+        color: $accent-color-lighter;
         opacity: 1;
     }
 
@@ -177,7 +177,7 @@
 
 @media (min-width: $desktop-width) {
     .header-search__trap {
-        width: 324px;    
+        width: 324px;
     }
 
     .header-search__form {

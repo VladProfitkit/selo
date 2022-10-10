@@ -1,0 +1,112 @@
+.contacts .site-container {
+    max-width: 1100px;
+}
+
+.contacts__info {
+    @include dflex(nowrap, column, flex-start, stretch);
+    margin-bottom: 20px;
+}
+
+.contacts__info-item {
+    @include dflex(nowrap, column, flex-start, center);
+}
+
+.contacts__info-item-value {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: $heading-color;
+
+    & a {
+        @include transition(color);
+        color: $accent-color;
+
+        &:hover,
+        &:focus {
+            color: $link-color-hover;
+            outline: none;
+        }
+
+        &:active {
+            color: $link-color-active;
+        }
+    }
+}
+
+.contacts__info-item-schedule {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: $accent-color-lighter;
+}
+
+.contacts__info-item {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.contacts__social {
+    margin-bottom: 20px;
+}
+
+.contacts__map {
+    width: 100%;
+    height: 300px;
+    background-color: #F4F4F0;
+}
+
+@media (min-width: $tablet-width) {
+    .contacts__info {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .contacts__info-item {
+        margin-right: auto;
+        margin-left: auto;
+
+        &:first-child {
+            align-items: flex-start;
+            margin-left: 0;
+        }
+
+        &:last-child {
+            align-items: flex-end;
+            margin-right: 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+
+    .contacts__social {
+        margin-bottom: 40px;
+    }
+
+    .contacts__map {
+        height: 350px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .contacts__info-item-value {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .contacts__info-item-schedule {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .contacts__map {
+        height: 400px;
+    }
+}

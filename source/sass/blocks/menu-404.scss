@@ -1,0 +1,44 @@
+.menu-404 {
+    @include list-reset;
+    @include dflex(nowrap, column, flex-start, center);
+}
+
+.menu-404__item {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+.menu-404__link {
+    @include transition(color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: $heading-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .menu-404 {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .menu-404__item {
+        &:not(:last-child) {
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+    }
+}
