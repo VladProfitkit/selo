@@ -244,6 +244,57 @@ $(function() {
             myMap.controls.remove('routeEditor');
         });
     }
+
+    //маски в формах:
+    let phoneInputs = $('input[name="PHONE"]'),
+        emailInputs = $('input[name="EMAIL"]'),
+        zipInputs = $('input[name="ZIP"]');
+
+    if (phoneInputs.length) {
+        phoneInputs.inputmask({
+            'mask': '+9(999)999-99-99',
+            'clearIncomplete': true,
+            'greedy': false,
+        });
+    }
+
+    // if (emailInputs.length) {
+    //     emailInputs.inputmask({
+    //         'mask': '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
+    //         'greedy': false,
+    //         'onBeforePaste': function (pastedValue, opts) {
+    //             pastedValue = pastedValue.toLowerCase();
+    //             return pastedValue.replace('mailto:', '');
+    //         },
+    //         'definitions': {
+    //             '*': {
+    //                 'validator': '[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]',
+    //                 'casing': 'lower'
+    //            }
+    //         }
+    //     });
+    // }
+
+    if (zipInputs.length) {
+        zipInputs.inputmask({
+            'mask': '999999',
+            'placeholder': '______',
+            'clearIncomplete': true,
+            'greedy': false,
+        });
+    }
+
+    //кастомные селекты:
+    let formSelects = $('.form__select');
+
+    formSelects.each(function() {
+        let select = $(this);
+
+        select.SumoSelect({
+
+        });
+    });
+
 });
 
 $(window).on('resize', function() {

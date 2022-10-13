@@ -5,6 +5,8 @@
     height: 70px;
     padding: 0;
     color: #fff;
+    font-size: 14px;
+    line-height: 20px;
     text-transform: uppercase;
     background-color: $accent-bg-color-active;
     border: 1px solid $accent-bg-color-active;
@@ -38,10 +40,19 @@
             border: 1px solid $accent-bg-color-active;
         }
     }
+
+    &--order {
+        width: 100%;
+        max-width: 356px;
+        padding: 0 10px;
+    }
 }
 
 @media (min-width: $tablet-width) {
     .btn {
+        font-size: 16px;
+        line-height: 22px;
+
         &--modal {
             position: relative;
 
