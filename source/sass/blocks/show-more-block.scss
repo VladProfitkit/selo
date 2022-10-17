@@ -1,0 +1,50 @@
+.show-more-block {
+    @include dflex(nowrap, column, flex-start, stretch);
+}
+
+.show-more-block__btn {
+    @include transition();
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: $show-more-btn-color;
+    border: 1px solid $heading-color;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        border-color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+        border-color: $link-color-active;
+    }
+}
+
+.show-more-block__counter {
+    margin-top: 10px;
+    text-align: center;
+    color: $show-more-btn-color;
+}
+
+.show-more-block__counter-shown {
+    color: $accent-color;
+}
+
+@media (min-width: $tablet-width) {
+    .show-more-block__btn {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .show-more-block__counter {
+        margin-top: 20px;
+    }
+}

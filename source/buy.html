@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/sumoselect.min.css">
+    <link rel="stylesheet" href="/css/select2.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>Оформление заказа</title>
 </head>
@@ -293,8 +293,8 @@
 
                         <div class="form__input-label form__input-label--select">
                             <p class="form__input-label-text">Населенный пункт*</p>
-                            <select class="form__select" name="CITY">
-                                <option selected disabled value="" style="display: none;">Не выбрано</option>
+                            <select class="form__select" name="CITY" data-placeholder="Не выбрано">
+                                <option></option>
                                 <option value="1">Москва</option>
                                 <option value="2">Санкт-Петербург</option>
                                 <option value="3">Екатеринбург</option>
@@ -312,6 +312,34 @@
                             <input class="form__input hidden-input" type="radio" name="DELIVERY" value="delivery_2" id="DELIVERY_3">
                             <label class="form__radio" for="DELIVERY_3">Доставка транспортной компанией</label>
                         </div>
+
+                        <div class="form__input-label form__input-label--select form__input-label--hidden" data-for-delivery="self">
+                            <p class="form__input-label-text">Адрес самовывоза*</p>
+                            <select class="form__select" name="PICKUP" data-placeholder="Не выбрано">
+                                <option></option>
+                                <option value="1">Адрес для самовывоза, 1</option>
+                                <option value="2">Адрес для самовывоза, 2</option>
+                                <option value="3">Адрес для самовывоза, 3</option>
+                                <option value="4">Адрес для самовывоза, 4</option>
+                                <option value="5">Адрес для самовывоза, 5</option>
+                                <option value="6">Адрес для самовывоза, 6</option>
+                            </select>
+                        </div>
+
+                        <label class="form__input-label form__input-label--hidden" data-for-delivery="delivery">
+                            <p class="form__input-label-text">Улица*</p>
+                            <input class="form__input" type="text" name="STREET" placeholder="Улица">
+                        </label>
+
+                        <label class="form__input-label form__input-label--hidden" data-for-delivery="delivery">
+                            <p class="form__input-label-text">Дом*</p>
+                            <input class="form__input" type="text" name="BUILDING" placeholder="Дом">
+                        </label>
+
+                        <label class="form__input-label form__input-label--hidden" data-for-delivery="delivery">
+                            <p class="form__input-label-text">Квартира</p>
+                            <input class="form__input" type="text" name="FLAT" placeholder="Квартира">
+                        </label>
                     </div>
                 </fieldset>
 
@@ -478,8 +506,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="/js/slick.min.js"></script>
     <script src="/js/jquery.inputmask.min.js"></script>
-    <script src="/js/jquery.sumoselect.min.js"></script>
-    <!-- <script src="/js/tail.select.min.js"></script> -->
+    <script src="/js/select2.full.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
 </html>

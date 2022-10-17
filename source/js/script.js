@@ -1,3 +1,94 @@
+//выпадание селекта в нужном направлении:
+const modifySelect2 = function() {
+    var Defaults = $.fn.select2.amd.require('select2/defaults');
+
+    $.extend(Defaults.defaults, {
+        dropdownPosition: 'auto'
+    });
+
+    var AttachBody = $.fn.select2.amd.require('select2/dropdown/attachBody');
+    var _positionDropdown = AttachBody.prototype._positionDropdown;
+
+    AttachBody.prototype._positionDropdown = function() {
+        var $window = $(window);
+        var isCurrentlyAbove = this.$dropdown.hasClass('select2-dropdown--above');
+        var isCurrentlyBelow = this.$dropdown.hasClass('select2-dropdown--below');
+        var newDirection = null;
+        var offset = this.$container.offset();
+
+        offset.bottom = offset.top + this.$container.outerHeight(false);
+
+        var container = {
+            height: this.$container.outerHeight(false)
+        };
+
+        container.top = offset.top;
+        container.bottom = offset.top + container.height;
+
+        var dropdown = {
+            height: this.$dropdown.outerHeight(false)
+        };
+
+        var viewport = {
+            top: $window.scrollTop(),
+            bottom: $window.scrollTop() + $window.height()
+        };
+
+        var enoughRoomAbove = viewport.top < (offset.top - dropdown.height);
+        var enoughRoomBelow = viewport.bottom > (offset.bottom + dropdown.height);
+
+        var css = {
+            left: offset.left,
+            top: container.bottom
+        };
+
+        // Determine what the parent element is to use for calciulating the offset
+        var $offsetParent = this.$dropdownParent;
+
+        // For statically positoned elements, we need to get the element
+        // that is determining the offset
+        if ($offsetParent.css('position') === 'static') {
+            $offsetParent = $offsetParent.offsetParent();
+        }
+
+        var parentOffset = $offsetParent.offset();
+
+        css.top -= parentOffset.top
+        css.left -= parentOffset.left;
+
+        var dropdownPositionOption = this.options.get('dropdownPosition');
+
+        if (dropdownPositionOption === 'above' || dropdownPositionOption === 'below') {
+            newDirection = dropdownPositionOption;
+        } else {
+            if (!isCurrentlyAbove && !isCurrentlyBelow) {
+                newDirection = 'below';
+            }
+
+            if (!enoughRoomBelow && enoughRoomAbove && !isCurrentlyAbove) {
+                newDirection = 'above';
+            } else if (!enoughRoomAbove && enoughRoomBelow && isCurrentlyAbove) {
+                newDirection = 'below';
+            }
+        }
+
+        if (newDirection == 'above' || (isCurrentlyAbove && newDirection !== 'below')) {
+            css.top = container.top - parentOffset.top - dropdown.height;
+        }
+
+        if (newDirection != null) {
+          this.$dropdown
+            .removeClass('select2-dropdown--below select2-dropdown--above')
+            .addClass('select2-dropdown--' + newDirection);
+          this.$container
+            .removeClass('select2-container--below select2-container--above')
+            .addClass('select2-container--' + newDirection);
+        }
+
+        this.$dropdownContainer.css(css);
+    };
+}
+
 let body = $('body');
 
 const openMobileMenu = function() {
@@ -13,18 +104,6 @@ const closeMobileMenu = function() {
     mobileMenu.removeClass('header__bottom--open');
     body.removeClass('fixed');
 }
-
-// const swapBannerBG = function() {
-//     let bannerSection = $('.index-banner'),
-//         mobileBG = bannerSection.data('bg-mobile'),
-//         desktopBG = bannerSection.data('bg-desktop');
-//
-//     if ($(window).width() < 768) {
-//         bannerSection.css('background-image', 'url('+mobileBG+')');
-//     } else {
-//         bannerSection.css('background-image', 'url('+desktopBG+')');
-//     }
-// }
 
 $(function() {
     //мобильное меню:
@@ -284,17 +363,73 @@ $(function() {
         });
     }
 
-    //кастомные селекты:
+    //кастомные селекты в стандартной форме:
     let formSelects = $('.form__select');
 
-    formSelects.each(function() {
-        let select = $(this);
+    if (formSelects.length) {
+        modifySelect2();
 
-        select.SumoSelect({
+        formSelects.each(function() {
+            let select = $(this),
+                placeholder = select.data('placeholder');
 
+            select.select2({
+                'placeholder': placeholder,
+                'minimumResultsForSearch': -1,
+                'dropdownPosition': 'below',
+                'width': 'auto',
+            });
         });
+    }
+
+    //переключение полей при смене выбора доставки в оформлении заказа (УДАЛИТЬ ПОСЛЕ ПЕРЕНОСА!!!):
+    let deliveryRadio = $('input[name="DELIVERY"]');
+
+    deliveryRadio.on('change', function() {
+        let selectedOption = $(this),
+            deliveryType = selectedOption.val(),
+            fieldsForSelf = $('.form__input-label[data-for-delivery="self"]'),
+            fieldsForDelivery = $('.form__input-label[data-for-delivery="delivery"]'),
+            classForHidden = 'form__input-label--hidden';
+
+        if (deliveryType == 'self') {
+            fieldsForDelivery.addClass(classForHidden);
+            fieldsForSelf.removeClass(classForHidden);
+        } else {
+            fieldsForDelivery.removeClass(classForHidden);
+            fieldsForSelf.addClass(classForHidden);
+        }
     });
 
+    //кастомные селекты в фильтрах каталога:
+    let filterSelects = $('.catalog-filter__filter--select');
+
+    if (filterSelects.length) {
+        modifySelect2();
+
+        filterSelects.each(function() {
+            let select = $(this),
+                placeholder = select.data('placeholder');
+
+            select.select2({
+                'placeholder': placeholder,
+                'minimumResultsForSearch': -1,
+                'dropdownPosition': 'below',
+                'width': 'auto',
+                'dropdownCssClass': 'catalog-filter__filter-select-dropdown',
+                'templateSelection': function(element) {
+                    if (element.id.length)
+                        return placeholder + ': ' + element.text;
+                    else
+                        return placeholder;
+                }
+            });
+
+            select.on('select2:select', function () {
+                select.closest('.catalog-filter__filters').find('.catalog-filter__filter-reset').removeClass('catalog-filter__filter-reset--hidden');
+            });
+        });
+    }
 });
 
 $(window).on('resize', function() {

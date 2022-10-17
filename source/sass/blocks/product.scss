@@ -205,6 +205,19 @@
         line-height: 25px;
     }
 
+    .product__buy {
+        @include transition(opacity);
+        opacity: 0;
+    }
+
+    .product:hover .product__buy {
+        opacity: 1;
+    }
+
+    .product:focus-within .product__buy {
+        opacity: 1;
+    }
+
     .product__buy-text {
         font-size: 22px;
         line-height: 25px;
