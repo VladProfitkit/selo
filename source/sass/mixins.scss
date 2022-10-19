@@ -52,6 +52,16 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin center-x {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin center-y {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 @mixin transition ($prop: all) {
     transition: $prop .2s linear;
 }

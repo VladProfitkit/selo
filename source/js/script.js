@@ -429,7 +429,25 @@ $(function() {
                 select.closest('.catalog-filter__filters').find('.catalog-filter__filter-reset').removeClass('catalog-filter__filter-reset--hidden');
             });
         });
+
+        $('.catalog-filter__filter-reset').on('click', function(e) {
+            e.preventDefault();
+            filterSelects.val(null).trigger('change');
+            $(this).addClass('catalog-filter__filter-reset--hidden');
+        })
     }
+
+    //удаление выбранных пунктов в фильтре:
+    let chosenFilterItems = $('.catalog-filter__chosen-item');
+
+    chosenFilterItems.each(function() {
+        let item = $(this),
+            itemRemoveBtn = item.find('.catalog-filter__chosen-item-remove');
+
+        itemRemoveBtn.on('click', function() {
+            item.remove();
+        });
+    });
 });
 
 $(window).on('resize', function() {
