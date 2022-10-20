@@ -20,7 +20,7 @@ gulp.task("css", function () {
     .pipe(sourcemap.init())
     .pipe(sass({includePaths: require("node-normalize-scss").includePaths}))
     .pipe(postcss([
-      autoprefixer({remove: false, flexbox: false})
+      autoprefixer()
     ]))
     .pipe(gulp.dest("build/css"))
     //.pipe(csso())

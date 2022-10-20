@@ -46,6 +46,14 @@
         max-width: 356px;
         padding: 0 10px;
     }
+
+    &--no-br {
+        border-radius: 0;
+    }
+
+    &--border {
+        border: 1px solid $heading-color;
+    }
 }
 
 @media (min-width: $tablet-width) {
