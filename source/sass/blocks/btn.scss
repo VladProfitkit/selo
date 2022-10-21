@@ -54,6 +54,15 @@
     &--border {
         border: 1px solid $heading-color;
     }
+
+    &--cart-restore {
+        flex-shrink: 0;
+        min-width: 194px;
+        height: 50px;
+        padding: 0 39px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 @media (min-width: $tablet-width) {
@@ -90,6 +99,12 @@
                     background-color: $accent-color
                 }
             }
+        }
+
+        &--cart-restore {
+            height: 60px;
+            font-size: 14px;
+            line-height: 20px;
         }
     }
 

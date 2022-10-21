@@ -448,6 +448,68 @@ $(function() {
             item.remove();
         });
     });
+
+    //кол-во товара в корзине (УДАЛИТЬ ПОСЛЕ ПЕРЕНОСА?):
+    let goodsCartCounterBlocks = $('.cart__item-quantity');
+    const changeQuantity = function(elem) {
+        let counterInput = elem.closest('.cart__item-quantity').find('.item-quantity-field'),
+            currentQuantity = parseInt(counterInput.val()),
+            minQuantity = counterInput.prop('min'),
+            maxQuantity = counterInput.prop('max'),
+            newQuantity = 0;
+
+        if (elem.hasClass('cart__item-quantity-btn--minus')) {
+            newQuantity = currentQuantity - 1;
+
+            if (newQuantity < minQuantity) {
+                return false;
+            } else {
+                counterInput.prop('value', newQuantity);
+                console.log(newQuantity);
+            }
+        } else if (elem.hasClass('cart__item-quantity-btn--plus')) {
+            newQuantity = currentQuantity + 1;
+
+            if (newQuantity > maxQuantity) {
+                return false;
+            } else {
+                counterInput.prop('value', newQuantity);
+                console.log(newQuantity);
+            }
+        } else {
+            return false;
+        }
+    }
+
+    goodsCartCounterBlocks.each(function() {
+        let counterBlock = $(this),
+            counterInput = counterBlock.find('.item-quantity-field'),
+            counterBtn = counterBlock.find('.cart__item-quantity-btn');
+
+        counterBtn.on('click', function() {
+            changeQuantity($(this));
+        });
+    });
+
+    //удаление товара из корзины (УДАЛИТЬ ПОСЛЕ ПЕРЕНОСА?):
+    let cartItems = $('.cart__table-row');
+
+    cartItems.each(function() {
+        let item = $(this),
+            removeBtn = item.find('.cart__item-remove-btn'),
+            restoreHtml = '<td class="cart__table-cell cart__table-cell--restore">\n'+
+                              '<span class="cart__restore-text">Товар был удален из корзины</span>\n'+
+                              '<button class="cart__restore-btn btn btn--secondary btn--cart-restore">Восстановить</button>\n'+
+                          '</td>';
+
+        removeBtn.on('click', function() {
+            item.find('.cart__table-cell--quantity').remove();
+            item.find('.cart__table-cell--price').remove();
+            item.find('.cart__table-cell--remove').remove();
+
+            item.append(restoreHtml);
+        });
+    });
 });
 
 $(window).on('resize', function() {
@@ -455,7 +517,4 @@ $(window).on('resize', function() {
     if ($(window).width() >= 1200 && $('.header__bottom').hasClass('header__bottom--open')) {
         closeMobileMenu();
     }
-
-    //Замена фона в баннере:
-    // swapBannerBG();
 });
