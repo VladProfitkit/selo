@@ -217,6 +217,7 @@ $(function() {
                         slidesToShow: 1,
                         infinite: true,
                         centerMode: true,
+                        variableWidth: true,
                     }
                 },
             ]
@@ -509,6 +510,82 @@ $(function() {
 
             item.append(restoreHtml);
         });
+    });
+
+    //основной слайдер в карточке товара:
+    let productSlider = $('.product-sliders__slider-items:not(.slick-initialized)');
+
+    if (productSlider.length) {
+        let productThumbSlider = $('.product-sliders__thumb-slider-items:not(.slick-initialized)');
+
+        productSlider.slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            arrows: false,
+            dots: false,
+            asNavFor: '.product-sliders__thumb-slider-items',
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        dots: true,
+                    }
+                },
+            ]
+        });
+
+        if (productThumbSlider.length) {
+            productThumbSlider.slick({
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                // centerMode: true,
+                arrows: false,
+                dots: false,
+                // variableWidth: true,
+                asNavFor: '.product-sliders__slider-items',
+                focusOnSelect: true,
+                responsive: [
+                    {
+                        breakpoint: 1599,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                ]
+            });
+        }
+    }
+
+    //"переключение" SKU в карточке (УДАЛИТЬ ПОСЛЕ ПЕРЕНОСА!!!):
+    let skuBtns = $('.catalog-element__sku-block-option');
+
+    skuBtns.on('click', function(e) {
+        e.preventDefault();
+
+        if (!$(this).hasClass('catalog-element__sku-block-option--active')) {
+            skuBtns.removeClass('catalog-element__sku-block-option--active');
+            $(this).addClass('catalog-element__sku-block-option--active');
+        }
+    });
+
+    //аккордеон с описанием товара в карточке:
+    let productDescToggles = $('.catalog-element__description-head, .catalog-element__description-toggle');
+
+    productDescToggles.on('click', function() {
+        let descBlock = $(this).closest('.catalog-element__description'),
+            descText = descBlock.find('.catalog-element__description-body');
+
+        descBlock.toggleClass('catalog-element__description--closed');
+        descText.slideToggle(200);
     });
 });
 

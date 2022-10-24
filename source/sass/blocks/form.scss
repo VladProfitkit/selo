@@ -3,7 +3,7 @@
 }
 
 .form__inputs {
-    @include dflex(nowrap, column, flex-start, stretch);
+    @include dflex(wrap, row, space-between, flex-start);
     width: 100%;
 }
 
@@ -306,13 +306,39 @@
     border: 7px solid $accent-color;
 }
 
+.form__logout-link {
+    @include transition(color);
+    margin: 20px 0 0;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: $heading-color;
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+    }
+
+    &:active {
+        color: $link-color-active;
+    }
+}
+
 @media (min-width: $tablet-width) {
     .form {
+        position: relative;
         flex-grow: 1;
 
         &--order {
             margin-top: 60px;
         }
+    }
+
+    .form__input-label {
+         &--short {
+             width: calc(50% - 20px);
+         }
     }
 
     .form__input {
@@ -367,5 +393,14 @@
         font-size: 22px;
         line-height: 25px;
         background-color: #fff;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .form__logout-link {
+        position: absolute;
+        right: 0;
+        top: -168px;
+        margin: 0;
     }
 }
