@@ -587,6 +587,27 @@ $(function() {
         descBlock.toggleClass('catalog-element__description--closed');
         descText.slideToggle(200);
     });
+
+    //слайдеры на статических страницах:
+    let staticSliders = $('.static .slider__slider:not(.slick-initialized)');
+
+    if (staticSliders.length) {
+        staticSliders.each(function () {
+            let slider = $(this);
+
+            slider.slick({
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                prevArrow: slider.closest('.static__slider').find('.slider__arrow--prev'),
+                nextArrow: slider.closest('.static__slider').find('.slider__arrow--next'),
+                responsive: [
+                    
+                ]
+            });
+        });
+    }
 });
 
 $(window).on('resize', function() {

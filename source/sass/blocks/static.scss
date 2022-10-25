@@ -1,0 +1,353 @@
+.static {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.static img {
+    width: 100%;
+    height: auto;
+}
+
+.static p {
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.static.static--about * {
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.static__content-block {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.static .static__accent-p {
+    padding: 20px;
+    background-color: $static-p-background-color;
+    border-radius: 10px;
+}
+
+.static__slider {
+    overflow: hidden;
+}
+
+.static__video {
+    @include dflex(nowrap, column, flex-start, center);
+}
+
+.static__video-iframe-wrapper {
+    position: relative;
+    align-self: stretch;
+    height: 0;
+    padding-top: calc(100% / 900 * 550);
+    margin-bottom: 5px;
+}
+
+.static__video-iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.static__video-caption {
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: $pic-caption-color;
+}
+
+.static__list-heading {
+    margin: 0 0 15px;
+    color: $text-color;
+}
+
+.static ul {
+    @include list-reset;
+}
+
+.static ol {
+    @include list-reset;
+    counter-reset: list-number;
+}
+
+.static li {
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.static ul li {
+    position: relative;
+    padding-left: 22px;
+
+    &::before {
+        @include abs-pseudo;
+        top: 9px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid $link-color-hover;
+        z-index: 1;
+    }
+}
+
+.static ol li {
+    counter-increment: list-number;
+
+    &::before {
+        content: counter(list-number)'. ';
+    }
+}
+
+.static p.static__pair {
+    @include dflex(nowrap, column, flex-start, flex-start);
+    margin-bottom: 10px;
+}
+
+.static__pair-heading {
+    margin: 0 0 5px;
+}
+
+.static__pair-value {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.static__btns {
+    @include dflex(nowrap, column, flex-start, stretch);
+}
+
+.static__btn {
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.static__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $heading-color;
+}
+
+.static__link {
+    @include transition(color);
+    position: relative;
+    display: inline;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $heading-color;
+
+    &::after {
+        @include abs-center-x;
+        @include transition(background-color);
+        top: auto;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background-color: $heading-color;
+    }
+
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+        outline: none;
+
+        &::after {
+            background-color: $link-color-hover;
+        }
+    }
+
+    &:active {
+        color: $link-color-active;
+
+        &::after {
+            background-color: $link-color-active;
+        }
+    }
+}
+
+.static__quote {
+    @include reset;
+    @include dflex(nowrap, row, space-between, flex-start);
+}
+
+.static__quote-img-block {
+    position: relative;
+    flex-basis: 80px;
+    flex-shrink: 0;
+    margin-right: 20px;
+
+    &::after {
+        @include abs-pseudo;
+        top: 0;
+        right: 0;
+        width: 21px;
+        height: 17px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("../img/icon-static-quote.svg");
+        z-index: 1;
+    }
+}
+
+.static__quote-img {
+    @include object-fit;
+    border-radius: 50%;
+}
+
+.static__quote-text-block {
+    @include dflex(nowrap, column, flex-start, flex-start);
+}
+
+.static__quote-text {
+    margin-bottom: 10px;
+}
+
+.static__quote-cite {
+    @include dflex(nowrap, column, flex-start, flex-start);
+    font-style: normal;
+}
+
+.static__quote-cite-name {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: $accent-color;
+}
+
+.static__quote-cite-position {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@media (min-width: $tablet-width) {
+    .static p {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .static.static--about * {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .static__content-block {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .static__video-iframe-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .static__video-caption {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .static p.static__pair {
+        margin-bottom: 20px;
+    }
+
+    .static__pair-heading {
+        margin: 0 0 10px;
+    }
+
+    .static__pair-value {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .static__btns {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: -10px;
+    }
+
+    .static__btn {
+        &:not(:last-child) {
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .static__link {
+        display: table;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 700;
+    }
+
+    .static__quote-img-block {
+        flex-basis: 100px;
+
+        &::after {
+            width: 32px;
+            height: 25px;
+        }
+    }
+
+    .static__quote-text {
+        margin-bottom: 20px;
+    }
+
+    .static__quote-cite-name {
+        margin: 0 0 10px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .static__quote-cite-position {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .static {
+        max-width: 1000px;
+    }
+
+    .static p {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .static.static--about * {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .static__content-block {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .static p.static__pair {
+        margin-bottom: 20px;
+    }
+}
