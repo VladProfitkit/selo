@@ -609,14 +609,6 @@ $(function() {
                 centerMode: true,
                 prevArrow: slider.closest('.static__slider').find('.slider__arrow--prev'),
                 nextArrow: slider.closest('.static__slider').find('.slider__arrow--next'),
-                responsive: [
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    },
-                ]
             });
         });
     }
