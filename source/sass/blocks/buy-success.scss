@@ -1,0 +1,45 @@
+.buy-success__info {
+    @include dflex(nowrap, column, flex-start, center);
+    margin-bottom: 40px;
+}
+
+.buy-success__text {
+    margin: 0;
+    color: #000;
+    text-align: center;
+
+    &:last-of-type {
+        margin-bottom: 20px;
+    }
+}
+
+.buy-success__order-number {
+    font-weight: 700;
+    color: $accent-color;
+}
+
+.buy-success__order-price {
+    font-weight: 700;
+}
+
+.buy-success__img-block {
+    width: 100%;
+    height: 200px;
+}
+
+.buy-success__img-block picture,
+.buy-success__img {
+    @include object-fit;
+}
+
+@media (min-width: $tablet-width) {
+    .buy-success__img-block {
+        height: 350px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .buy-success__img-block {
+        height: 490px;
+    }
+}

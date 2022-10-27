@@ -100,6 +100,11 @@
             }
         }
     }
+
+    &--buy-success {
+        font-size: 16px;
+        line-height: 22px;
+    }
 }
 
 @media (min-width: $tablet-width) {

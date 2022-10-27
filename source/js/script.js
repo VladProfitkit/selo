@@ -143,9 +143,6 @@ $(function() {
         }
     });
 
-    //Замена фона в баннере:
-    // swapBannerBG();
-
     //слайдер коллекций на главной:
     let collectionSlider = $('.index-catalog--slider .slider__slider:not(.slick-initialized)');
 
@@ -595,6 +592,16 @@ $(function() {
         staticSliders.each(function () {
             let slider = $(this);
 
+            slider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+                let currentSlideSpan = slider.parent().find('.static__slider-counter-current'),
+                    totalSlidesSpan = slider.parent().find('.static__slider-counter-total'),
+                    currentSlideNumber = (currentSlide ? currentSlide : 0) + 1,
+                    totalSlidesNumber = slick.slideCount;
+
+                currentSlideSpan.text(currentSlideNumber);
+                totalSlidesSpan.text(totalSlidesNumber);
+            });
+
             slider.slick({
                 infinite: false,
                 slidesToShow: 1,
@@ -603,7 +610,12 @@ $(function() {
                 prevArrow: slider.closest('.static__slider').find('.slider__arrow--prev'),
                 nextArrow: slider.closest('.static__slider').find('.slider__arrow--next'),
                 responsive: [
-                    
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
                 ]
             });
         });
