@@ -11,9 +11,12 @@
 
 .menu-404__link {
     @include transition(color);
+    display: block;
+    width: auto;
     font-weight: 700;
     font-size: 14px;
     line-height: 22px;
+    text-align: center;
     text-transform: uppercase;
     color: $heading-color;
 

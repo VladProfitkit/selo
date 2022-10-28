@@ -10,8 +10,8 @@
 }
 
 .logo__img {
-    width: 100%;
-    height: auto;
+    @include object-fit;
+    object-fit: contain;
 }
 
 @media (min-width: $tablet-width) {

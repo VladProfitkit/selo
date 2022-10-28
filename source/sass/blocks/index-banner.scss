@@ -27,6 +27,7 @@
     margin-bottom: 20px;
     color: #fff;
     font-weight: 700;
+    text-align: center;
 }
 
 .index-banner__link {
@@ -36,6 +37,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 120%;
+    text-align: center;
 
     &::after {
         @include abs-center-x;

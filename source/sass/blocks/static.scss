@@ -381,6 +381,13 @@
 }
 
 @media (min-width: $tablet-width) {
+    .static {
+        &--about {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    }
+
     .static p {
         &:not(:last-child) {
             margin-bottom: 10px;
@@ -527,6 +534,12 @@
 }
 
 @media (min-width: $desktop-width) {
+    .static {
+        &--about {
+            max-width: 1000px;
+        }
+    }
+
     .static__content-block {
         max-width: 900px;
 

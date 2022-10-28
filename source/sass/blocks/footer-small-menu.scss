@@ -11,10 +11,13 @@
 
 .footer-small-menu__link {
     @include transition(color);
+    display: block;
+    width: auto;
     font-weight: 700;
     font-size: 16px;
     line-height: 25px;
     color: $accent-color;
+    text-align: center;
 
     &:hover,
     &:focus {
@@ -24,5 +27,12 @@
 
     &:active {
         color: $link-color-active;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .footer-small-menu__link {
+        display: inline;
+        text-align: left;
     }
 }
