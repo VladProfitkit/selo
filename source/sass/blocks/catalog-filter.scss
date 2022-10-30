@@ -139,7 +139,26 @@
         right: 0;
         width: 12px;
         height: 12px;
+		
+		& path {
+			@include transition(fill);
+			fill: $show-more-btn-color;
+			
+		}
     }
+	
+	&:hover,
+	&:focus	{
+		outline: none;
+		
+		& path {
+			fill: $link-color-hover;
+		}
+	}
+	
+	&:active path {
+		fill: $link-color-active;
+	}
 }
 
 @media (min-width: $tablet-width) {
