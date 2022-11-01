@@ -10,15 +10,22 @@
 }
 
 .orders__table-row {
+    @include transition(background-color);
     @include dflex(wrap, column, flex-start, stretch);
     /* autoprefixer: ignore next */
     align-content: space-between;
     height: 202px;
     padding: 20px;
+    background-color: #fff;
     border: 1px solid $accent-bg-color;
 
     &:not(:last-child) {
         margin-bottom: 10px;
+    }
+
+    &:hover {
+        background-color: $accent-bg-color;
+        cursor: pointer;
     }
 }
 

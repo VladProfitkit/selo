@@ -177,7 +177,13 @@
 
 @media (min-width: $desktop-width) {
     .header-search__trap {
-        width: 324px;
+        width: auto;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .header-search__trap-text {
+        display: none;
     }
 
     .header-search__form {
@@ -192,5 +198,17 @@
     .header-search__close {
         right: auto;
         left: calc(50% + 491px);
+    }
+}
+
+@media (min-width: $big-desktop-width) {
+    .header-search__trap {
+        width: 324px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $heading-color;
+    }
+
+    .header-search__trap-text {
+        display: inline;
     }
 }

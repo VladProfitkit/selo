@@ -66,7 +66,7 @@
 }
 
 .catalog-element__sku-block-items-wrapper {
-    @include dflex(nowrap, row, flex-start, flex-start);
+    @include dflex(nowrap, row, center, flex-start);
     position: relative;
     left: -15px;
     align-self: stretch;
@@ -203,6 +203,10 @@
         font-weight: 400;
     }
 
+    .catalog-element__sku-block-items-wrapper {
+        justify-content: flex-start;
+    }
+
     .catalog-element__description-head {
         cursor: pointer;
     }
@@ -259,7 +263,7 @@
 
     .catalog-element__info {
         flex-basis: 741px;
-        flex-shrink: 0;
+        flex-shrink: 1;
         flex-grow: 0;
         margin-left: 171px;
     }

@@ -477,6 +477,8 @@ $(function() {
         } else {
             return false;
         }
+
+        elem.blur();
     }
 
     goodsCartCounterBlocks.each(function() {
@@ -577,7 +579,9 @@ $(function() {
     //аккордеон с описанием товара в карточке:
     let productDescToggles = $('.catalog-element__description-head, .catalog-element__description-toggle');
 
-    productDescToggles.on('click', function() {
+    productDescToggles.on('click', function(e) {
+        e.stopPropagation();
+
         let descBlock = $(this).closest('.catalog-element__description'),
             descText = descBlock.find('.catalog-element__description-body');
 
@@ -612,6 +616,15 @@ $(function() {
             });
         });
     }
+
+    //переход по data-ссылке в списке заказов:
+    let orderRows = $('.orders__table-row');
+
+    orderRows.on('click', function() {
+        let link = $(this).data('url');
+
+        window.location = link;
+    });
 });
 
 $(window).on('resize', function() {
