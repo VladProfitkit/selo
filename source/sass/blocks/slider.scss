@@ -6,6 +6,17 @@
     display: none;
 }
 
+.slider__arrow {
+    @include transition();
+    opacity: 1;
+    visibility: visible;
+
+    &[aria-disabled="true"] {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .slider__arrow.slick-hidden {
     display: none;
 }
